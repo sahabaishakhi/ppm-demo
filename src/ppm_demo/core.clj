@@ -10,7 +10,7 @@
    head (clojure.string/join
          "\n"
          (map str (repeat "255 ") (map mod
-                                       (range width) (repeat 256)) (repeat " 0")))))
+                                       (range grids) (repeat 256)) (repeat " 0")))))
 
 (def ppm-content image-data)
 
