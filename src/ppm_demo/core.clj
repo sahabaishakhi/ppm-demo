@@ -5,8 +5,13 @@
 (def grids (* width height))
 
 (def head (str "P3\n" height " " width " 255" "\n" ))
-(def image-data (str head
-                     (clojure.string/join "\n" (repeat grids "255 0 0"))))
+(def image-data
+  (str
+   head (clojure.string/join
+         "\n"
+         (map str (repeat "255 ") (map mod
+                                       (range width) (repeat 256)) (repeat " 0")))))
+
 (def ppm-content image-data)
 
 (spit "griddemo.ppm" ppm-content)
