@@ -1,7 +1,7 @@
 (ns ppm-demo.core)
 
-(def height 4)
-(def width 6)
+(def height 400)
+(def width 600)
 (def grids (* width height))
 
 (def head (str "P3\n" height " " width "\n"))
